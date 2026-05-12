@@ -1,0 +1,28 @@
+Package: monitorclimaesaude.backend
+Title: Backend for Climate, Environment, and Health Rumour Monitoring
+Version: 0.0.0.9000
+Authors@R:
+    person("Raphael", "Saldanha", role = c("aut", "cre"))
+Description: R-first backend pipeline for monitoring media signals in Brazil,
+    starting with GDELT and storing normalized signals in DuckDB.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    DBI,
+    digest,
+    dplyr,
+    duckdb,
+    httr2,
+    jsonlite,
+    lubridate,
+    plumber,
+    purrr,
+    stringr,
+    tibble,
+    yaml
+Suggests:
+    targets,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

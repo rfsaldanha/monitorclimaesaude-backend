@@ -1,0 +1,124 @@
+queries:
+  # 1. Climate-sensitive disease mentions
+  - id: disease_arbovirus_climate_brazil
+    label: Arboviruses and climate-sensitive transmission
+    topic: climate_sensitive_disease
+    signal_family: arbovirus_mentions
+    query: 'Brasil (dengue OR chikungunya OR zika OR arbovirose) (chuva OR enchente OR calor OR clima OR mosquito OR Aedes)'
+
+  - id: disease_vector_borne_environment_brazil
+    label: Vector-borne diseases and environmental change
+    topic: climate_sensitive_disease
+    signal_family: vector_borne_mentions
+    query: '(Brasil OR Amazonia) (malaria OR "febre amarela" OR leishmaniose) (chuva OR calor OR seca OR desmatamento OR garimpo OR clima OR mosquito)'
+
+  - id: disease_flood_waterborne_brazil
+    label: Flood-related and waterborne diseases
+    topic: climate_sensitive_disease
+    signal_family: waterborne_mentions
+    query: 'Brasil (leptospirose OR diarreia OR gastroenterite OR "hepatite A" OR colera) (enchente OR inundacao OR alagamento OR agua OR esgoto OR chuva)'
+
+  - id: disease_heat_health_brazil
+    label: Heat-related illness and health impacts
+    topic: climate_sensitive_disease
+    signal_family: heat_health_mentions
+    query: 'Brasil (calor OR "onda de calor" OR temperatura) (insolacao OR desidratacao OR "estresse termico" OR cardiovascular OR hospitalizacao OR morte)'
+
+  - id: disease_smoke_respiratory_brazil
+    label: Smoke, fires, and respiratory disease
+    topic: climate_sensitive_disease
+    signal_family: smoke_health_mentions
+    query: '(Brasil OR Amazonia OR Pantanal) (queimada OR incendio OR fumaca OR poluicao) (asma OR bronquite OR respiratorio OR hospital OR internacao)'
+
+  # 2. Disease outbreak and surge signals
+  - id: surge_arbovirus_brazil
+    label: Arbovirus outbreaks and small surges
+    topic: climate_sensitive_disease
+    signal_family: disease_surge
+    query: 'Brasil (dengue OR chikungunya OR zika OR arbovirose) (surto OR "aumento de casos" OR "alta de casos" OR "explosao de casos" OR epidemia OR "alerta epidemiologico")'
+
+  - id: surge_flood_waterborne_brazil
+    label: Flood-related and waterborne disease surges
+    topic: climate_sensitive_disease
+    signal_family: disease_surge
+    query: 'Brasil (leptospirose OR diarreia OR gastroenterite OR colera OR "hepatite A") (surto OR "aumento de casos" OR "alta de casos" OR alerta OR morte OR hospitalizacao)'
+
+  - id: surge_heat_health_brazil
+    label: Heat illness surges and alerts
+    topic: climate_sensitive_disease
+    signal_family: disease_surge
+    query: 'Brasil (calor OR "onda de calor" OR temperatura) ("aumento de atendimentos" OR "alta de atendimentos" OR alerta OR emergencia OR hospitalizacao OR morte)'
+
+  - id: surge_respiratory_smoke_brazil
+    label: Respiratory surges linked to smoke and fires
+    topic: climate_sensitive_disease
+    signal_family: disease_surge
+    query: '(Brasil OR Amazonia OR Pantanal) (fumaca OR queimada OR incendio OR poluicao) ("aumento de casos" OR "alta de casos" OR "aumento de atendimentos" OR internacao OR hospitalizacao OR "crise respiratoria")'
+
+  # 3. Climate-related event signals
+  - id: event_flood_emergency_brazil
+    label: Flood events and local emergencies
+    topic: climate_related_event
+    signal_family: flood_event
+    query: 'Brasil (enchente OR inundacao OR alagamento OR temporal OR chuva) (emergencia OR desalojados OR desabrigados OR alerta OR calamidade OR "defesa civil")'
+
+  - id: event_landslide_rainfall_brazil
+    label: Landslides after extreme rainfall
+    topic: climate_related_event
+    signal_family: landslide_event
+    query: 'Brasil (deslizamento OR barreira OR encosta) (chuva OR temporal OR enchente OR risco OR alerta OR soterramento)'
+
+  - id: event_drought_water_shortage_brazil
+    label: Drought and water shortage events
+    topic: climate_related_event
+    signal_family: drought_event
+    query: 'Brasil (seca OR estiagem OR "falta de agua" OR racionamento) (emergencia OR alerta OR colapso OR abastecimento OR saude)'
+
+  - id: event_wildfire_smoke_brazil
+    label: Wildfire and smoke events
+    topic: climate_related_event
+    signal_family: wildfire_event
+    query: '(Brasil OR Amazonia OR Pantanal OR Cerrado) (queimada OR incendio OR fumaca) (alerta OR emergencia OR evacuacao OR "qualidade do ar" OR saude)'
+
+  - id: event_heatwave_health_brazil
+    label: Heatwave events and public health alerts
+    topic: climate_related_event
+    signal_family: heatwave_event
+    query: 'Brasil ("onda de calor" OR calor OR temperatura) (alerta OR recorde OR emergencia OR risco OR saude OR morte)'
+
+  - id: event_storm_disruption_brazil
+    label: Severe storm events and local disruption
+    topic: climate_related_event
+    signal_family: storm_event
+    query: 'Brasil (temporal OR ciclone OR vendaval OR granizo OR tempestade) (alerta OR emergencia OR destruicao OR mortes OR desalojados)'
+
+  # 4. Information disorder, distrust, and claims
+  - id: claim_hidden_cases_brazil
+    label: Hidden cases and outbreak distrust
+    topic: information_disorder
+    signal_family: hidden_cases
+    query: 'Brasil (dengue OR arbovirose OR surto OR epidemia) ("casos escondidos" OR "governo esconde" OR subnotificacao OR mentira OR falso)'
+
+  - id: claim_disease_cure_vaccine_brazil
+    label: Disease cure and vaccine claims
+    topic: information_disorder
+    signal_family: cure_vaccine_claims
+    query: 'Brasil (dengue OR chikungunya OR zika OR leptospirose OR malaria) (vacina OR "cura natural" OR "tratamento milagroso" OR ivermectina OR cloroquina)'
+
+  - id: claim_vector_control_distrust_brazil
+    label: Distrust around mosquito control
+    topic: information_disorder
+    signal_family: vector_control_distrust
+    query: 'Brasil (fumace OR inseticida OR mosquito OR Aedes OR "mosquito modificado") ("faz mal" OR veneno OR cancer OR infertilidade OR conspiracao OR falso)'
+
+  - id: claim_contaminated_water_brazil
+    label: Contaminated water claims
+    topic: information_disorder
+    signal_family: contamination_claims
+    query: 'Brasil ("agua contaminada" OR "agua envenenada" OR contaminacao OR mercurio OR agrotoxico) (doenca OR cancer OR intoxicacao OR surto OR falso)'
+
+  - id: claim_climate_denial_brazil
+    label: Climate denial and false climate claims
+    topic: information_disorder
+    signal_family: climate_denial
+    query: 'Brasil (clima OR "mudanca climatica" OR "aquecimento global") (farsa OR mentira OR fraude OR falso)'

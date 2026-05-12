@@ -47,3 +47,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Project data and pipeline outputs
+data/raw/
+data/duckdb/
+_targets/
